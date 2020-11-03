@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    font-family: sans-serif;
+    background-color: #222222;
+}
+
+#logo {
+    display: block;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.75em;
+    margin: .2em;
+    float: left;
+}
+
+#frequency {
+    font-size: 1.3em;
+}
+
+#slideContainer {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#frequency {
+    line-height: 2em;
+    white-space: nowrap;
+}
+
+.slider {
+    display: block;
+    width: 100%;
+    margin: 1em;
+}
+
+.slide {
+    width: 30em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+div.container, div.octave, div.center {
+    display: inline-flex;
+    flex-flow: row, nowrap;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+div.octave {
+    flex-direction: column;
+}
+
+div.justC {
+    flex-direction: column;
+}
+
+button.note, 
+button.just {
+    height: 2.2em;
+    font-size: 1.3em;
+}
+
+button.note {
+    width: 3em;
+}
+
+div.octaveLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.2em;
+    font-size: 1.3em;
+}
+
+button {
+    background-color: #333333;
+    color: white;
+    border: 1px solid black;
+}
+
+button.style {
+    font-size: 1.3em;
+    height: 2.2em;
+    width: 8em;
+    display: block;
+    float: left;
+}
+
+button.octaveChange {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+div.container {
+    width: 100%;
+}
+
+div.center {
+    margin: auto;
+}
+
+button.active {
+    background-color: #1f85c4;
+}
+
+
+@media (max-width: 40em) {
+    div.container {
+        width: 100%;
+    }
+    div.octave {
+        display: none;
+    }
+    button.note {
+        width: 100%;
+        height: 3em;
+    }
+    button.just {
+        height: 3em;
+    }
+    div.octaveLabel {
+        height: 3em;
+    }
+    div.active {
+        display: inline-flex;
+        width: 100%;
+    }
+    button.style {
+        height: 3em;
+        width: 33.333%;
+    }
+    .center {
+        width: 100%;
+    }
+    .slider {
+        width: 100%;
+    }
+    .octaveLabel {
+        background-color: #333333;
+    }
+}
+
+@media (min-width: 40em) {
+    button.octaveChange {
+        display: none;
+    }
+}
