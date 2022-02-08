@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+  font-family: Code;
+  src: url(font/SourceCodePro.ttf);
+}
+
+@font-face {
+  font-family: Code;
+  src: url(font/SourceCodePro-Bold.ttf);
+    font-weight: bold;
+}
+
+a {
+    color: lightblue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #000000, #1b0061, #800000, #003961);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+#navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333355;
+    height: 3em;
+    z-index: 2;
+}
+
+p.text {
+    padding: 2%;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    font-size: 1.3em;
+    width: 47%;
+    max-width: 750px;
+    min-width: 380px;
+    margin: auto;
+}
+
+#aboutText {
+    font-family: Code;
+    text-align: center;
+    float: left;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-image: url(img/vertical2.svg);
+}
+
+#aboutText.p {
+    font-family: Code;
+}
+
+
+#lock  {
+    font-size: 4.5em;
+    font-family: "Ubuntu";
+    color: white;
+    text-align: center;
+}
+
+
+#welcome {
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+}
+#start {
+    font-size: 40%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+#background {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+	background: linear-gradient(-45deg, #222222, #555555, #222222, #555555);
+	background-size: 400% 400%;
+	animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes move {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+div.window {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333333;
+    background-color: #222222;
+    overflow-x: hidden;
+}
+
+.window div.bar {
+    touch-action: none;
+    position: relative;
+    height: 3em;
+    background-color: #444444;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+button.closeButton {
+    right: 0;
+    width: 4.2em;
+    background-color: #DD7777;
+    height: 100%;
+    float: left;
+}
+
+button.closeButton:hover {
+    background-color: #ee3333;
+}
+
+button.closeButton:hover div.minimize{
+    background-color: white;
+}
+
+button.positioner {
+    border: 1px solid grey;
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    bottom: 0;
+}
+
+button.resize {
+    right: 0;
+    background: linear-gradient(to bottom right, lightblue, lightblue 50%, white 50%, white);
+    cursor: nwse-resize;
+    touch-action: none;
+}
+
+button.snapLeft {
+    right: 2.4em;
+    background: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);
+}
+
+button.snapRight {
+    right: 1.2em;
+    background: linear-gradient(to left, lightblue, lightblue 50%, white 50%, white);
+}
+
+button.fullScreen {
+    height: 3.6em;
+    width: 4.2em;
+    border: 1px solid grey;
+    background-color: #666666;
+    float: left;
+}
+
+div.fullScreenLogo {
+    background-color: white;
+    width: 2em;
+    height: 1.4em;
+    padding: .1em;
+    margin-left: calc((4.2em - 2em - 4px) / 2);
+}
+
+div.fullScreenLogo div {
+    background-color: #666666;
+    width: 100%;
+    height: 100%;
+}
+
+button.fullScreen:hover {
+    background-color: #777777;
+}
+
+button.navButton {
+    height: 100%;
+    border: none;
+    font-family: sans-serif;
+    width: 7em;
+    margin: none;
+    overflow: hidden;
+    text-align: center;
+    line-height: 3em;
+    background-color: #333355;
+    color: white;
+    border-right: 1px solid white;
+    float: left;
+}
+
+button.navButton:hover {
+    background-color: #4d4da3;
+}
+
+button.selected {
+    background-color: #6666a3;
+}
+
+button.primary {
+    background-color: #8888c5;
+}
+
+div.minimize {
+    width: 50%;
+    height: 5%;
+    background-color: #666666;
+    margin-left: 25%;
+}
+
+#lock {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 6;
+}
+
+div.windowContainer {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 3em);
+    overflow: hidden;
+}
+
+div.content {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: calc(100% - 4.2em);
+}
+
+div.content object {
+    width: 100%;
+    height: 100%;
+}
+
+
+#aboutWindow {
+    color: white;
+}
+
+button.projectButton {
+    color: white;
+    font-size: 1.2em;
+    height: 100%;
+    top: 0;
+    float: left;
+    border: 1px solid black;
+    background-color: #444444;
+}
+
+button.selected.projectButton {
+    background-color: #6688ff;
+}
+
+button.projectButton:hover {
+    background-color: #4466ff;
+}
+
+#aboutWindow div.content {
+    overflow-y: auto;
+}
+
+span.blue {
+    color: #5555ff;
+    font-weight: bold;
+}
+
+div.picture {
+    margin: auto;
+    width: 35%;
+    max-width: 850px;
+    min-width: 380px;
+    height: 700px;
+    background-image: url(img/meCropped.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+@media(max-width: 800px) {
+    p.text {
+        width: 96%;
+        min-width: 96%;
+    }
+    div.picture {
+        height: 580px;
+        width: 90%;
+        min-width: 90%;
+        margin: 1%;
+    }
+}
+
+@media(max-width: 800px), (max-height: 600px) {
+    div.window div.bar {
+        display: none;
+    }
+    
+    div.window {
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    div.window div.content {
+        height: 100%;
+    }
+    
+    button.positioner {
+        display: none;
+    }
+    
+    #projectsWindow div.bar {
+        display: block;
+    }
+    
+    #projectsWindow div.content {
+        height: calc(100% - 3em);
+    }
+    
+    #projectsWindow div.bar .closeButton,  #projectsWindow div.bar .fullScreen {
+        display: none;
+    }
+    
+    .projectButton {
+        overflow: hidden;
+        width: 50%;
+    }
+}
+
+@media(max-width: 50em) {
+    #lock{
+        font-size: 2.5em;
+    }
+}
+
+@media(max-width: 40em) {
+    #lock{
+        font-size: 2em;
+    }
+}

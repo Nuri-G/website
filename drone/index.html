@@ -1,0 +1,231 @@
+<body>
+    <link rel="stylesheet" type="text/css" href="sound.css">
+    <p id="logo">TuningDrone.us</p>
+    <div id="slideContainer">
+        <div class="center slide">
+            <p id="frequency">A4 = <span id="A4Freq"></span>Hz</p>
+            <input type="range" min="420" max="460" value="440" class="slider" id="base">
+        </div>
+    </div>
+    <div id="buttonContainer" class="container">
+        <div class="center">
+            <button onclick="toggleSharp()" class="style">#/&#9837</button>
+            <button onclick="toggleJust(this)" class="style">Chord Mode</button>
+            <button onclick="toggleAll()" class="style">Stop All</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="center">
+            <div id="flatContainer" class="center">
+                <div class="octave flat">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>1<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(1, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(1, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(1, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(1, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(1, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(1, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(1, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(1, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(1, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(1, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(1, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(1, 10));" class="note">G</button>
+                </div>
+
+                <div class="octave flat">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>2<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(2, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(2, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(2, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(2, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(2, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(2, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(2, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(2, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(2, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(2, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(2, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(2, 10));" class="note">G</button>
+                </div>
+
+                <div class="octave flat">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>3<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(3, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(3, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(3, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(3, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(3, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(3, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(3, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(3, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(3, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(3, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(3, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(3, 10));" class="note">G</button>
+                </div>
+
+                <div class="octave flat active">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>4<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(4, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(4, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(4, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(4, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(4, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(4, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(4, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(4, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(4, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(4, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(4, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(4, 10));" class="note">G</button>
+                </div>
+
+                <div class="octave flat">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>5<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(5, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(5, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(5, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(5, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(5, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(5, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(5, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(5, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(5, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(5, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(5, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(5, 10));" class="note">G</button>
+                </div>
+
+                <div class="octave flat">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>6<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(6, -1));" class="note">A&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(6, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(6, 1));" class="note">B&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(6, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(6, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(6, 4));" class="note">D&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(6, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(6, 6));" class="note">E&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(6, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(6, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(6, 9));" class="note">G&#9837</button>
+                    <button onclick="toggleNote(this, equalNote(6, 10));" class="note">G</button>
+                </div>
+            </div>
+            <div id="sharpContainer" class="hidden container">
+                <div class="octave sharp">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>1<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(1, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(1, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(1, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(1, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(1, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(1, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(1, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(1, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(1, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(1, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(1, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(1, 11));" class="note">G#</button>
+                </div>
+
+                <div class="octave sharp">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>2<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(2, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(2, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(2, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(2, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(2, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(2, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(2, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(2, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(2, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(2, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(2, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(2, 11));" class="note">G#</button>
+                </div>
+
+                <div class="octave sharp">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>3<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(3, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(3, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(3, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(3, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(3, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(3, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(3, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(3, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(3, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(3, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(3, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(3, 11));" class="note">G#</button>
+                </div>
+
+                <div class="octave sharp active">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>4<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(4, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(4, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(4, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(4, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(4, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(4, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(4, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(4, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(4, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(4, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(4, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(4, 11));" class="note">G#</button>
+                </div>
+
+                <div class="octave sharp">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>5<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(5, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(5, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(5, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(5, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(5, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(5, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(5, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(5, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(5, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(5, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(5, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(5, 11));" class="note">G#</button>
+                </div>
+
+                <div class="octave sharp">
+                    <div class="octaveLabel"><button class="octaveChange" onclick="previous()">&lt</button>6<button class="octaveChange" onclick="next()">&gt</button></div>
+                    <button onclick="toggleNote(this, equalNote(6, 0));" class="note">A</button>
+                    <button onclick="toggleNote(this, equalNote(6, 1));" class="note">A#</button>
+                    <button onclick="toggleNote(this, equalNote(6, 2));" class="note">B</button>
+                    <button onclick="toggleNote(this, equalNote(6, 3));" class="note">C</button>
+                    <button onclick="toggleNote(this, equalNote(6, 4));" class="note">C#</button>
+                    <button onclick="toggleNote(this, equalNote(6, 5));" class="note">D</button>
+                    <button onclick="toggleNote(this, equalNote(6, 6));" class="note">D#</button>
+                    <button onclick="toggleNote(this, equalNote(6, 7));" class="note">E</button>
+                    <button onclick="toggleNote(this, equalNote(6, 8));" class="note">F</button>
+                    <button onclick="toggleNote(this, equalNote(6, 9));" class="note">F#</button>
+                    <button onclick="toggleNote(this, equalNote(6, 10));" class="note">G</button>
+                    <button onclick="toggleNote(this, equalNote(6, 11));" class="note">G#</button>
+                </div>
+            </div>
+            <div id="justContainer" class="hidden container justC">
+                <button onclick="toggleNote(this, justNote(1))" class="just">Root</button>
+                <button onclick="toggleNote(this, justNote(25/24))" class="just">Minor Second</button>
+                <button onclick="toggleNote(this, justNote(9/8))" class="just">Major Second</button>
+                <button onclick="toggleNote(this, justNote(6/5))" class="just">Minor Third</button>
+                <button onclick="toggleNote(this, justNote(5/4))" class="just">Major Third</button>
+                <button onclick="toggleNote(this, justNote(4/3))" class="just">Fourth</button>
+                <button onclick="toggleNote(this, justNote(45/32))" class="just">Diminished Fifth</button>
+                <button onclick="toggleNote(this, justNote(3/2))" class="just">Fifth</button>
+                <button onclick="toggleNote(this, justNote(8/5))" class="just">Minor Sixth</button>
+                <button onclick="toggleNote(this, justNote(5/3))" class="just">Major Sixth</button>
+                <button onclick="toggleNote(this, justNote(9/5))" class="just">Minor Seventh</button>
+                <button onclick="toggleNote(this, justNote(15/8))" class="just">Major Seventh</button>
+                <button onclick="toggleNote(this, justNote(2))" class="just">Octave</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="sound.js"></script>
+</body>

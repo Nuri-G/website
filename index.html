@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nurivan's personal website.
+                                      "/>
+    <title>Nurivan Gómez</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<body onload="start(); fullScreen('aboutWindow');">
+    <div id="background"></div>
+    <div class="windowContainer">
+        <div id="aboutWindow" class="window" onpointerdown="front('aboutWindow');">
+            <div class="bar" onpointerdown="startDrag('aboutWindow');">
+                <button class="closeButton" onclick="hide('aboutWindow');"><div class="minimize"></div></button>
+                <button class="fullScreen" onpointerdown="fullScreen('aboutWindow');">
+                    <div class="fullScreenLogo"><div></div></div>
+                </button>
+            </div>
+            <div class="content">
+                <div id="aboutText">
+                    <h1>Howdy! I'm <span class="blue">Nurivan Gómez</span>.</h1>
+                    <p class="text">
+                        &emsp; I am a computer science student at Texas A&M University who loves to code and write programs.
+                        <br>
+                        <br>
+                        &emsp; I’ve made several websites like this one, the <a href="http://www.fourpointsunited.com">Four Points United Website</a>,
+                        and a <a href="https://nuri-g.github.io/TuningDrone/">tuning drone website</a>. In addition to website development, I have some experience making Java applications with JavaFX and Swing (like a spaceship building game I worked on last year). I also have experience from working on several other projects which you can see in the <a onclick="hide('resumeWindow');">My Resume</a> window.
+                        <br>
+                        <br>
+                        &emsp; To see some demos and pictures of the projects I have worked on, check out the <a onclick="hide('projectsWindow');">My Projects</a> tab on this site.
+                        <br>
+                        <br>
+                        &emsp; If you would like to contact me, the best way to reach me is by email at <a href="mailto:nurivan.gomez@gmail.com">nurivan.gomez@gmail.com.</a>
+
+                    </p>
+                    <div class="picture"></div>
+                </div>
+                
+            </div>
+            <button class="positioner snapLeft" onpointerdown="snapLeft('aboutWindow');"></button>
+            <button class="positioner snapRight" onpointerdown="snapRight('aboutWindow');"></button>
+            <button class="positioner resize" onpointerdown="startResize('aboutWindow');"></button>
+        </div>
+        
+        
+        <div id="resumeWindow" class="window hidden" onpointerdown="front('resumeWindow');">
+            <div class="bar" onpointerdown="startDrag('resumeWindow');">
+                <button class="closeButton" onclick="hide('resumeWindow');"><div class="minimize"></div></button>
+                <button class="fullScreen" onpointerdown="fullScreen('resumeWindow');">
+                    <div class="fullScreenLogo"><div></div></div>
+                </button>
+            </div>
+            <div class="content">
+                <div class="hidden overlay" style="width: 100%; height: 100%; position: absolute; opacity: 100%;"></div>
+                
+                <object type="text/html" width="100%" height="100%" data="resume.html"></object>
+            </div>
+            <button class="positioner snapLeft" onpointerdown="snapLeft('resumeWindow');"></button>
+            <button class="positioner snapRight" onpointerdown="snapRight('resumeWindow');"></button>
+            <button class="positioner resize" onpointerdown="startResize('resumeWindow');"></button>
+        </div>
+        
+        
+        <div id="projectsWindow" class="window hidden" onpointerdown="front('projectsWindow');">
+            
+            <div class="bar" onpointerdown="startDrag('projectsWindow');">
+                <button class="closeButton" onclick="hide('projectsWindow');"><div class="minimize"></div></button>
+                <button class="fullScreen" onpointerdown="fullScreen('projectsWindow');">
+                    <div class="fullScreenLogo"><div></div></div>
+                </button>
+                <button id="droneButton" onclick="toggleProject()" class="projectButton selected">TuningDrone.us Demo</button>
+                <button id="galleryButton" onclick="toggleProject()" class="projectButton">Java Project Gallery</button>
+            </div>
+            
+            <div class="content">
+                <div class="hidden overlay" style="width: 100%; height: 100%; position: absolute; opacity: 100%;"></div>
+                <object type="text/html" data="drone/index.html" id="drone"></object>
+                <object type="text/html" data="gallery/gallery.html" id="gallery"></object>
+            </div>
+            
+            <button class="positioner snapLeft" onpointerdown="snapLeft('projectsWindow');"></button>
+            <button class="positioner snapRight" onpointerdown="snapRight('projectsWindow');"></button>
+            <button class="positioner resize" onpointerdown="startResize('projectsWindow');"></button>
+        </div>
+    </div>
+    <div id="lock" onclick="animations.tv()">
+        <p id="welcome">Howdy, I'm Nurivan Gómez</p>
+        <p id="clock">00:00:00</p>
+        <p id="start">Press Any Key to Start</p>
+    </div>
+    <div id="navbar">
+        <button id="aboutWindowButton" class="navButton selected primary" onclick="hide('aboutWindow');">About Me</button>
+        <button id="resumeWindowButton" class="navButton" onclick="hide('resumeWindow');">My Resume</button>
+        <button id="projectsWindowButton" class="navButton" onclick="hide('projectsWindow');">My Projects</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
